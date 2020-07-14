@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import PrivateRoute from "./components/privateRoute";
-import "./App.css";
 
-import { Login } from "./components/login";
-import { FriendList } from "./components/friendlist";
+import PrivateRoute from "./components/PrivateRoute";
+import { Login } from "./components/Login";
+import { FriendList } from "./components/FriendList";
 import { AddFriend } from "./components/AddFriend";
+
+import "./App.css";
 
 function App(props) {
   const logout = e => {
@@ -17,11 +18,11 @@ function App(props) {
     <section className="App">
       <Router>
         <div className="nav">
-          <Link to="/login">Login</Link>
 
           <Link to="/friendslist">Friends List</Link>
 
           <Link to="/addfriend">Add Friend</Link>
+          <Link to="/login">Login</Link>
           <button onClick={logout}>Log Out</button>
         </div>
         <div className="routes">

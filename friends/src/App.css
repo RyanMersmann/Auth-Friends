@@ -2,10 +2,10 @@
   text-align: center;
 }
 body {
-  background-color: honeydew;
+  background-color: rgb(167, 217, 247);
 }
 .nav {
-  background-color: rgb(137, 25, 250);
+  background-color: rgb(161, 39, 39);
   padding-top: 2%;
 }
 a {
@@ -32,18 +32,18 @@ input {
 }
 .friend {
   width: 30%;
-  border: 4px inset rebeccapurple;
-  background-color: gainsboro;
+  border: 4px inset rgb(161, 39, 39);
+  background-color: white;
   margin: 1%;
 }
 button {
-  background-color: rebeccapurple;
+  background-color: rgb(161, 39, 39);
   border: 3px inset gold;
   color: white;
   margin-bottom: 2%;
 }
 button:hover {
-  background-color: turquoise;
+  background-color: rgb(167, 217, 247);
   border: 3px inset gold;
   color: white;
 }
