@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import PrivateRoute from "./components/privateRoute";
+import "./App.css";
 
-function App() {
+import { Login } from "./components/login";
+import { FriendList } from "./components/friendlist";
+import { AddFriend } from "./components/AddFriend";
+
+function App(props) {
+  const logout = e => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    window.location.reload(false);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="App">
+      <Router>
+        <div className="nav">
+          <Link to="/login">Login</Link>
+
+          <Link to="/friendslist">Friends List</Link>
+
+          <Link to="/addfriend">Add Friend</Link>
+          <button onClick={logout}>Log Out</button>
+        </div>
+        <div className="routes">
+          <Switch>
+            <PrivateRoute exact path="/friendslist" component={FriendList} />
+            <PrivateRoute exact path="/addfriend" component={AddFriend} />
+            <Route path="/login" component={Login} />
+            <Route component={Login} />
+          </Switch>
+        </div>
+      </Router>
+    </section>
   );
 }
 
