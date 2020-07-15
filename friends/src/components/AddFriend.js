@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import swal from 'sweetalert';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 export function AddFriend(props) {
@@ -22,6 +22,7 @@ export function AddFriend(props) {
       .then(res => {
         console.log("new friend res:", res);
         props.history.push("/friendslist");
+        swal("Good job!", "New Friend Added!", "success");
       })
       .catch(err => {
         console.log("Err is: ", err);

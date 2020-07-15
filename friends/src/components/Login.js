@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import swal from 'sweetalert';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 export function Login(props) {
@@ -21,6 +21,7 @@ export function Login(props) {
       .then(res => {
         localStorage.setItem("token", res.data.payload);
         props.history.push("/friendslist");
+        swal("Come on in!", "", "success");
       })
       .catch(err => {
         console.log("Err is: ", err);

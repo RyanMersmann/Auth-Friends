@@ -5,6 +5,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import { Login } from "./components/Login";
 import { FriendList } from "./components/FriendList";
 import { AddFriend } from "./components/AddFriend";
+import swal from 'sweetalert';
 
 import "./App.css";
 
@@ -13,6 +14,7 @@ function App(props) {
     e.preventDefault();
     localStorage.removeItem("token");
     window.location.reload(false);
+    swal("Thanks for dropping by!", "", "success");
   };
   return (
     <section className="App">
